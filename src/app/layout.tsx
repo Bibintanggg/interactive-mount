@@ -57,7 +57,7 @@ function Header() {
         <div className="flex h-6 w-6 items-center justify-center rounded-sm bg-primary">
           <span className="text-xs font-semibold text-primary-foreground">A</span>
         </div>
-        <span className="text-lg font-semibold">Acme Inc</span>
+        <span className="text-lg font-semibold">GuideMount</span>
       </div>
       <div className="ml-auto flex items-center gap-4">
         <span className="text-sm text-muted-foreground">Dashboard</span>

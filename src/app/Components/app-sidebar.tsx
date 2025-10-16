@@ -9,7 +9,8 @@ import {
   FileText, 
   BarChart3,
   Bell,
-  HelpCircle
+  HelpCircle,
+  Map
 } from "lucide-react"
 import {
   Sidebar,
@@ -27,63 +28,17 @@ import {
 // Menu items untuk berbagai group
 const mainItems = [
   {
-    title: "Home",
-    url: "#",
+    title: "Overview",
+    url: "/home",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-    badge: "5"
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Map",
+    url: "/mapping",
+    icon: Map,
   },
 ]
 
-const analyticsItems = [
-  {
-    title: "Dashboard",
-    url: "#",
-    icon: BarChart3,
-  },
-  {
-    title: "Reports",
-    url: "#",
-    icon: FileText,
-  },
-  {
-    title: "Users",
-    url: "#",
-    icon: Users,
-  },
-]
-
-const settingsItems = [
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Notifications",
-    url: "#",
-    icon: Bell,
-  },
-  {
-    title: "Help",
-    url: "#",
-    icon: HelpCircle,
-  },
-]
 
 export function AppSidebar() {
   return (
@@ -94,8 +49,8 @@ export function AppSidebar() {
             <span className="text-sm font-bold text-white">A</span>
           </div>
           <div>
-            <h2 className="font-semibold">Acme Inc</h2>
-            <p className="text-xs text-muted-foreground">Workspace</p>
+            <h2 className="font-semibold">GuideMount</h2>
+            <p className="text-xs text-muted-foreground">Your assistance Summits</p>
           </div>
         </div>
       </SidebarHeader>
@@ -108,49 +63,8 @@ export function AppSidebar() {
               {mainItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-3">
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
-                      {item.badge && (
-                        <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
-                          {item.badge}
-                        </span>
-                      )}
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel>Analytics</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {analyticsItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-3">
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel>Settings</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {settingsItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-3">
-                      <item.icon className="h-4 w-4" />
+                    <a href={item.url} className="flex items-center gap-3 text-xl">
+                      <item.icon className="h-5 w-5" />
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
