@@ -1,8 +1,9 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AppSidebar } from "./Components/app-sidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,37 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SidebarProvider>
-        <AppSidebar/>
-        {children}
+          <div className="flex min-h-screen w-full">
+            <AppSidebar />
+            <SidebarInset>
+              <Header />
+              <main className="flex-1 p-6">
+                {children}
+              </main>
+            </SidebarInset>
+          </div>
         </SidebarProvider>
       </body>
     </html>
   );
+}
+
+// Komponen Header terpisah
+import { SidebarTrigger } from "@/components/ui/sidebar"
+
+function Header() {
+  return (
+    <header className="flex h-16 shrink-0 items-center gap-2 border-b px-6">
+      <SidebarTrigger />
+      <div className="flex items-center gap-2">
+        <div className="flex h-6 w-6 items-center justify-center rounded-sm bg-primary">
+          <span className="text-xs font-semibold text-primary-foreground">A</span>
+        </div>
+        <span className="text-lg font-semibold">Acme Inc</span>
+      </div>
+      <div className="ml-auto flex items-center gap-4">
+        <span className="text-sm text-muted-foreground">Dashboard</span>
+      </div>
+    </header>
+  )
 }
