@@ -1,0 +1,20 @@
+import { Crown } from "lucide-react";
+import TopCards from "./TopCards";
+
+export default function TopRank() {
+    return (
+        <div className="bg-black/5 w-80 min-h-screen rounded-xl p-4">
+            <h2 className="text-xl font-semibold mb-4 font-sans">Top Summits</h2>
+
+            <TopCards
+                icon={<Crown fill="yellow" />}
+                profile="/assets/file.jpg"
+                name="BintangGG"
+                summits={20}
+                role="Pendaki Akut"
+                location="Jakarta/Indonesia"
+                region={4}
+                climbs={20} />
+        </div>
+    )
+}
