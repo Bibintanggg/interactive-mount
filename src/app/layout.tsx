@@ -34,7 +34,7 @@ export default function RootLayout({
           <div className="flex min-h-screen w-full">
             <AppSidebar />
             <SidebarInset>
-              <Header />
+              {/* <Header /> */}
               <main className="flex-1 p-6">
                 {children}
               </main>
@@ -44,24 +44,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-// Komponen Header terpisah
-import { SidebarTrigger } from "@/components/ui/sidebar"
-
-function Header() {
-  return (
-    <header className="flex h-16 shrink-0 items-center gap-2 border-b px-6">
-      <SidebarTrigger />
-      <div className="flex items-center gap-2">
-        <div className="flex h-6 w-6 items-center justify-center rounded-sm bg-primary">
-          <span className="text-xs font-semibold text-primary-foreground">A</span>
-        </div>
-        <span className="text-lg font-semibold">GuideMount</span>
-      </div>
-      <div className="ml-auto flex items-center gap-4">
-        <span className="text-sm text-muted-foreground">Dashboard</span>
-      </div>
-    </header>
-  )
 }
