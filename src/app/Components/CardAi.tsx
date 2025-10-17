@@ -3,7 +3,7 @@ import { AiMountainProps } from "@/types/ai-mount"
 export default function CardAi({ desc, icon, link }: AiMountainProps) {
     return (
         <div className="p-2">
-        <div className="bg-black/10 mb-10 rounded-lg h-52 w-60 p-4">
+        <div className="bg-black/10 mb-10 rounded-lg h-52 w-[235px] p-4">
             <div className="bg-gradient-to-tr from-purple-400 to-purple-800 w-16 h-16 flex items-center justify-center rounded-full text-white">
                 {icon}
             </div>

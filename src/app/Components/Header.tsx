@@ -2,10 +2,13 @@ import { UserData } from "@/lib/user-inform";
 import Image from "next/image";
 import React, { ReactNode } from "react";
 
-export default function Header({ title, notif, search }: { title: string, notif: string | React.ReactNode, search: string | ReactNode }) {
+export default function Header({ title, notif, search, subtitle }: { title: string, notif: string | React.ReactNode, search: string | ReactNode, subtitle?: string }) {
     return (
         <header className="flex justify-between w-full">
+            <div className="flex flex-col">
             <p className="text-4xl font-sans font-medium">{title}</p>
+            <p className="font-sans text-base text-black/50">{subtitle}</p>
+            </div>
 
             <div className="flex items-center gap-5">
                 <button className="border w-10 h-10 rounded-full items-center flex justify-center">
