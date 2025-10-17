@@ -1,17 +1,4 @@
 // Components/app-sidebar.tsx
-import { 
-  Calendar, 
-  Home, 
-  Inbox, 
-  Search, 
-  Settings, 
-  Users, 
-  FileText, 
-  BarChart3,
-  Bell,
-  HelpCircle,
-  Map
-} from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
