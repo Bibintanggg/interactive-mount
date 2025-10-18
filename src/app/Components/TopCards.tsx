@@ -1,6 +1,9 @@
 import { TopRankData } from "@/data/top-rank-data";
 import Image from "next/image";
 
+import Streak from "./Streak";
+import { Droplet } from "lucide-react";
+
 export default function TopCards({ name, profile, icon, summits, role, location, climbs, region }: TopRankData) {
     return (
         <div className="w-full h-40 bg-gradient-to-r from-purple-700 to-purple-500 backdrop-blur-md rounded-xl p-6 text-white shadow-lg">
@@ -14,13 +17,17 @@ export default function TopCards({ name, profile, icon, summits, role, location,
                         {icon}
                     </div>
 
-                    <Image
-                        src={profile}
-                        width={85}
-                        height={85}
-                        alt="profile"
-                        className="rounded-full border-2 border-yellow-400"
-                    />
+                    <div className="flex flex-col items-center">
+                        <Image
+                            src={profile}
+                            width={85}
+                            height={85}
+                            alt="profile"
+                            className="rounded-full border-2 border-yellow-400"
+                        />
+
+                        <Streak icon={<Droplet fill="orange" />} num={20} />
+                    </div>
                 </div>
 
                 <div className="flex flex-col font-sans">
