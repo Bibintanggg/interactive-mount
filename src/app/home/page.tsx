@@ -6,25 +6,32 @@ import TopRank from "../Components/TopRankRightbar";
 
 export default function Home() {
     return (
-        <div className="p-10">
-            <div className="flex flex-col items-start">
-                <Header notif={<Bell />} search={<Search />} title="Overview" subtitle="Your summits assistance" />
-            </div>
+        <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 p-8">
+            <div className="max-w-[1800px] mx-auto">
+                <Header
+                    notif={<Bell />}
+                    search={<Search />}
+                    title="Overview"
+                    subtitle="Asisten Pendakian Anda"
+                />
 
-            <div className="flex gap-10 mt-6">
-                <div className="grid grid-cols-2 max-w-2xl gap-7">
-                    {CardData.map((items) => (
-                        <div key={items.id}>
-                            <Card
-                                title={items.title}
-                                icon={items.icon}
-                                reach={items.reach} />
+                <div className="flex gap-8 mt-10">
+                    <div className="flex-1">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+                            {CardData.map((items) => (
+                                <Card
+                                    key={items.id}
+                                    title={items.title}
+                                    icon={items.icon}
+                                    reach={items.reach}
+                                />
+                            ))}
                         </div>
-                    ))}
-                </div>
+                    </div>
 
-                <TopRank />
+                    <TopRank />
+                </div>
             </div>
         </div>
-    )
+    );
 }

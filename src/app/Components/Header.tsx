@@ -6,11 +6,11 @@ export default function Header({ title, notif, search, subtitle }: { title: stri
     return (
         <header className="flex justify-between w-full">
             <div className="flex flex-col">
-            <p className="text-4xl font-sans font-medium">{title}</p>
-            <p className="font-sans text-base text-black/50">{subtitle}</p>
+            <p className="text-4xl font-sans font-medium text-white">{title}</p>
+            <p className="font-sans text-base text-white">{subtitle}</p>
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 text-white">
                 <button className="border w-10 h-10 rounded-full items-center flex justify-center">
                     {search}
                 </button>
@@ -19,15 +19,15 @@ export default function Header({ title, notif, search, subtitle }: { title: stri
                     {notif}
                 </button>
 
-                <hr className="border border-black/40 h-10 rounded-full" />
+                <hr className="border border-white h-10 rounded-full" />
 
                 {UserData.map((item) => (
                     <div key={item.id} className="flex font-sans">
                         <div className="flex items-center gap-3">
                             <div className="flex flex-col items-end">
                                 <p>{item.name}</p>
-                                <p className="text-sm text-black/50">{item.email}</p>
-                                <p className="text-sm text-black/50">{item.role}</p>
+                                <p className="text-sm text-white">{item.email}</p>
+                                <p className="text-sm text-white">{item.role}</p>
                             </div>
                             <Image src={item.profile} alt={item.profile} width={40} height={40} className="rounded-full" />
                         </div>
