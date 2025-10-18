@@ -29,12 +29,12 @@ export default function ClientLayout({
 
         <div className="top-4 left-4 z-50 fixed">
           <SidebarTrigger
-            className="p-2 rounded-lg bg-black/20 cursor-pointer"
+            className="p-2 rounded-lg bg-black/20 cursor-pointer z-[9999]"
           />
         </div>
 
         <SidebarInset>
-          <main className="flex-1 p-6">{children}</main>
+          <main className="">{children}</main>
         </SidebarInset>
       </div>
     </SidebarProvider>

@@ -1,4 +1,3 @@
-// Components/DynamicMap.tsx
 'use client';
 import dynamic from 'next/dynamic';
 
