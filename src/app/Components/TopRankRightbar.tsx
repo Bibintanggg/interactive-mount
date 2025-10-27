@@ -3,15 +3,19 @@ import TopCards from "./TopCards";
 
 export default function TopRank() {
   return (
-    <div className="w-96 bg-gray-900/50 border border-gray-800 backdrop-blur-sm rounded-2xl p-6 shadow-2xl max-h-[calc(100vh-8rem)] overflow-y-auto">
-      <div className="flex items-center gap-2 mb-6">
-        <Crown fill="gold" className="text-yellow-400" size={28} />
-        <h2 className="text-2xl font-bold text-white">Top Pendaki</h2>
+    <div className="w-96 bg-[#111] border border-[#222] rounded-xl p-5 max-h-[calc(100vh-8rem)] overflow-y-auto">
+      
+      <div className="flex items-center justify-between mb-5 pb-4 border-b border-[#222]">
+        <div className="flex items-center gap-2">
+          <Crown size={20} className="text-gray-400" />
+          <h2 className="text-lg font-semibold text-white">Top Pendaki</h2>
+        </div>
+        <div className="text-[10px] text-gray-600 font-mono">LIVE</div>
       </div>
 
       <TopCards
         rank={1}
-        icon={<Crown fill="gold" size={20} />}
+        icon={<Crown fill="#FFD700" size={16} />}
         profile="/assets/file.jpg"
         name="BintangGG"
         summits={20}
@@ -23,7 +27,7 @@ export default function TopRank() {
       
       <TopCards
         rank={2}
-        icon={<Crown fill="silver" size={20} />}
+        icon={<Crown fill="#C0C0C0" size={16} />}
         profile="/api/placeholder/80/80"
         name="MountainHero"
         summits={18}
@@ -35,7 +39,7 @@ export default function TopRank() {
       
       <TopCards
         rank={3}
-        icon={<Crown fill="#CD7F32" size={20} />}
+        icon={<Crown fill="#CD7F32" size={16} />}
         profile="/api/placeholder/80/80"
         name="SummitMaster"
         summits={15}
@@ -47,4 +51,3 @@ export default function TopRank() {
     </div>
   );
 }
-

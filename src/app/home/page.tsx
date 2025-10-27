@@ -1,12 +1,15 @@
 import { CardData } from "@/data/card-data";
 import Card from "../Components/Card";
 import Header from "../Components/Header";
-import { Bell, Search } from 'lucide-react';
+import { Bell, Search, TrendingUp, Activity, Calendar, MapPin } from 'lucide-react';
 import TopRank from "../Components/TopRankRightbar";
+import ActivityFeed from "../Components/ActivityFeed";
+import QuickStats from "../Components/QuickStats";
+import UpcomingTrips from "../Components/UpcomingTrips";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 p-8">
+        <div className="min-h-screen bg-[#0a0a0a] p-8">
             <div className="max-w-[1800px] mx-auto">
                 <Header
                     notif={<Bell />}
@@ -15,9 +18,11 @@ export default function Home() {
                     subtitle="Asisten Pendakian Anda"
                 />
 
-                <div className="flex gap-8 mt-10">
-                    <div className="flex-1">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+                <QuickStats />
+
+                <div className="flex gap-6 mt-6">
+                    <div className="flex-1 space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {CardData.map((items) => (
                                 <Card
                                     key={items.id}
@@ -27,6 +32,10 @@ export default function Home() {
                                 />
                             ))}
                         </div>
+
+                        <UpcomingTrips />
+
+                        <ActivityFeed />
                     </div>
 
                     <TopRank />
