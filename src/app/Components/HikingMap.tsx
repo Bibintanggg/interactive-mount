@@ -4,7 +4,6 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { mountainData } from '@/data/mountain-data';
 
-// Fix untuk marker icons
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -71,17 +70,6 @@ export default function HikingMap() {
                 MOUNTAIN NFT
               </h1>
               <p className="text-gray-400 text-xs">Explore Digital Peaks</p>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-4">
-            <div className="flex gap-2">
-              <button className="px-4 py-2 bg-[#1a1a1a] border border-[#333] rounded-lg text-white text-sm hover:border-purple-500 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20">
-                🎮 Explore
-              </button>
-              <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg text-white text-sm font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/40">
-                🔗 Connect Wallet
-              </button>
             </div>
           </div>
         </div>
